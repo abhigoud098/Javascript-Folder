@@ -1,9 +1,7 @@
 ```
-This is a personal project created to practice and explore web development using **HTML5** 🧱 and **CSS3** 🎨.
-It focuses on building responsive layouts 📱, clean UI design, and improving overall frontend skills 💻.
-
-## 🛠️ Tech Stack
-- 🧱 HTML5
-- 🎨 CSS3
+📝 Personal Portfolio Project 
+🌐 This is my personal portfolio website built using HTML5 🧱 and CSS3 🎨 to showcase my skills, projects 🚀, and learning journey as a frontend developer 💻.
+The design is fully responsive 📱, clean, and minimal, with a focus on good user experience and accessibility.
+It reflects my passion for building things on the web 🌟, experimenting with modern UI/UX principles, and growing as a developer through continuous learning 📘.
 
 ```
