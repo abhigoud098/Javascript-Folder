@@ -1,0 +1,430 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #cec2ff;
+  padding-top: 3rem;
+}
+
+/* essentials */
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #a06cff;
+  font-weight: bold;
+  padding: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+a:hover {
+  background-color: #cec2ff;
+  border-radius: 10px;
+}
+
+h3 {
+  font-size: 3.5rem;
+  text-align: center;
+  color: #a06cff;
+}
+
+/* stylings */
+
+nav {
+  height: 3rem;
+  background-color: #ede3ff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: calc(100% - 40px);
+  z-index: 1000;
+}
+
+nav img {
+  height: 2rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+.hero {
+  display: flex;
+  height: calc(100vh - 3rem);
+  justify-content: space-around;
+}
+
+.hero > div {
+  flex-grow: 3;
+}
+
+.contentDiv {
+  display: flex;
+  height: calc(100vh - 3rem);
+  align-items: start;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  gap: 5px;
+}
+
+.content h3 {
+  font-size: 4.5rem;
+  color: rgb(160, 108, 255);
+  text-align: left;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+  color: #b266ff;
+}
+
+.content p {
+  font-size: 1.5rem;
+  color: #ede3ff;
+  width: 800px;
+}
+
+.content {
+  text-align: left;
+}
+
+.heroImg {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+}
+
+.about img {
+  width: 500px;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  height: 100vh;
+}
+
+.aboutMe {
+  text-align: left;
+  height: fit-content;
+  width: 700px;
+}
+
+.aboutMe h3 {
+  font-size: 2rem;
+  color: #a06cff;
+  font-weight: 700;
+  text-align: left;
+}
+
+.mobilehero {
+  display: none;
+  border-radius: 20px;
+  background-color: #ede3ff;
+  margin-top: 20px;
+}
+
+.skills {
+  display: flex;
+  padding: 2rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.divSkills {
+  height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #b45bfd;
+  box-shadow: 10px 10px 0;
+  padding: 10px;
+  border: 1px solid #8c00ff;
+  transition: all 0.3s ease;
+}
+
+.divSkills:hover {
+  scale: 0.9;
+}
+
+.divSkills img {
+  width: 200px;
+}
+
+.divSkills h2 {
+  font-size: 2.3rem;
+}
+
+.Edu_button {
+  display: block;
+  margin: 50px auto;
+  background-color: #b45bfd;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.Edu_button:hover {
+  background-color: #b45bfd;
+  border-radius: 20px;
+}
+
+.education {
+  margin-top: 2rem;
+}
+
+/* card */
+
+.card {
+  position: relative;
+  width: 250px;
+  height: 300px;
+  background: #b45bfd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  padding: 20px;
+  box-shadow: 10px 10px 0 white;
+}
+
+.card img {
+  width: 120px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card h2 {
+  color: #000;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card:hover .card__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+.card:hover svg {
+  scale: 0;
+  transform: rotate(-45deg);
+}
+
+.cards {
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: calc(100vh - 210px);
+  gap: 50px;
+}
+
+.main {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.maincontact {
+  height: 70vh;
+  width: 80%;
+  background-color: #b45bfd;
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  border-radius: 20px;
+}
+
+.maincontact > div {
+  flex-grow: 1;
+}
+
+.subcontact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subcontact form {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  height: 80%;
+  width: 50%;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+form label {
+  color: #b266ff;
+}
+
+input {
+  border: none;
+  outline: none;
+  height: 1.5rem;
+  width: 15rem;
+  color: #000;
+  background-color: #caadff;
+}
+
+input::placeholder {
+  color: #000000;
+}
+
+.img_div img {
+  height: 100px;
+}
+
+/* mobile */
+
+@media (max-width: 1000px) {
+  .pp {
+    display: none !important;
+  }
+
+  .sec2 {
+    margin: auto;
+  }
+
+  .ul {
+    gap: 10px;
+  }
+
+  .ul li a {
+    font-size: 16px;
+  }
+
+  .heroImg,
+  .desktophero {
+    display: none;
+  }
+
+  .mobilehero {
+    display: block;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .content h3 {
+    font-size: 3.5rem;
+  }
+
+  .content p {
+    width: 300px;
+    text-align: center;
+  }
+
+  .contentDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about {
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    gap: 50px;
+  }
+
+  .content h3 {
+    font-size: 3.5rem;
+    color: rgb(160, 108, 255);
+  }
+
+  .content h2 {
+    font-size: 2rem;
+  }
+
+  .content p {
+    font-size: 1.5rem;
+    color: #ede3ff;
+    padding: 10px;
+  }
+
+  .aboutMe {
+    width: calc(100% - 60px);
+    text-align: center;
+  }
+
+  .about img {
+    width: 250px;
+  }
+
+  .aboutMe h3 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}
