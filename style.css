@@ -38,6 +38,11 @@ h3 {
   color: #a06cff;
 }
 
+h2 {
+  text-align: left;
+  color: #a06cff;
+}
+
 /* stylings */
 
 nav {
@@ -63,9 +68,25 @@ nav ul {
 }
 
 .hero {
+  position: relative; /* ✅ Needed for ::before to position correctly */
   display: flex;
   height: calc(100vh - 3rem);
   justify-content: space-around;
+  overflow: hidden; /* Optional: hide anything overflowing */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("image/7127974.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.1;
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
 .hero > div {
@@ -95,8 +116,8 @@ nav ul {
 }
 
 .content p {
-  font-size: 1.5rem;
-  color: #ede3ff;
+  font-size: 1.3rem;
+  color: #ffffff;
   width: 800px;
 }
 
@@ -127,6 +148,10 @@ nav ul {
   text-align: left;
   height: fit-content;
   width: 700px;
+}
+
+.aboutMe p {
+  font-size: 1.3rem;
 }
 
 .aboutMe h3 {
@@ -175,6 +200,11 @@ nav ul {
 
 .divSkills h2 {
   font-size: 2.3rem;
+  color: white;
+}
+
+.divSkills p {
+  padding: 20px;
 }
 
 .Edu_button {
@@ -194,6 +224,46 @@ nav ul {
 
 .education {
   margin-top: 2rem;
+}
+
+.education-card {
+  background-color: #f3e8ff; /* light lavender */
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: fit-content;
+  height: 100%;
+  box-shadow: 0 6px 15px rgba(178, 102, 255, 0.2);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+}
+
+.education-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #7a00cc; /* dark purple heading */
+  font-weight: bold;
+}
+
+.education-card div {
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+  color: #5e3473; /* dark muted purple for labels */
+}
+
+.education-card strong {
+  color: #4a1764; /* darker label text */
+  margin-right: 0.4rem;
+}
+
+.education-card span {
+  color: #333399; /* dark blue for values */
+  font-weight: 500;
 }
 
 /* card */
@@ -244,6 +314,10 @@ nav ul {
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+#project_card {
+  overflow-y: scroll;
+}
+
 .card:hover .card__content {
   transform: translate(-50%, -50%) rotate(0deg);
   opacity: 1;
@@ -259,8 +333,22 @@ nav ul {
 .card__description {
   margin: 10px 0 0;
   font-size: 14px;
-  color: #777;
+  color: #000000;
   line-height: 1.4;
+  padding: 10px;
+}
+
+#project_card strong {
+  color: #000;
+}
+
+#project_card ul li {
+  color: #000000;
+  padding: 10px;
+}
+
+#key_feature {
+  color: #a06cff;
 }
 
 .card:hover svg {
@@ -274,8 +362,16 @@ nav ul {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  height: calc(100vh - 210px);
+  /* height: calc(100vh - 210px); */
   gap: 50px;
+}
+
+.card__title {
+  color: #a06cff;
+}
+
+.card_title_aTag:hover {
+  background: none;
 }
 
 .main {
@@ -286,58 +382,180 @@ nav ul {
 }
 
 .maincontact {
-  height: 70vh;
-  width: 80%;
-  background-color: #b45bfd;
+  min-height: 70vh;
+  height: fit-content;
+  margin: 0 10px;
+  max-width: 1000px;
+  background-color: #c986ff;
   display: flex;
   padding: 20px;
-  flex-wrap: wrap;
-  margin-top: 5rem;
   border-radius: 20px;
-}
-
-.maincontact > div {
-  flex-grow: 1;
+  margin-top: 2rem;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .subcontact {
   display: flex;
+  height: 100%;
   justify-content: center;
   align-items: center;
+  max-width: 400px;
 }
 
 .subcontact form {
+  padding: 25px;
   background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border-radius: 20px;
-  height: 80%;
-  width: 50%;
+  height: 100%;
+  max-width: 100%;
   gap: 1rem;
   overflow: hidden;
+  text-align: left;
+}
+
+form > * {
+  margin: 10px;
+}
+
+form button {
+  border: none;
+  background-color: #b45bfd;
+  color: #fff;
+  font-weight: bolder;
+  border-radius: 10px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  border-radius: 20px;
 }
 
 form label {
   color: #b266ff;
+  font-weight: 800;
+  font-size: 1rem;
+  text-align: left;
+}
+
+form textarea {
+  border-radius: 10px;
+  background-color: #c988ff;
+  font-weight: 500;
+  padding: 8px;
 }
 
 input {
   border: none;
   outline: none;
+  background-color: #c988ff;
   height: 1.5rem;
   width: 15rem;
-  color: #000;
-  background-color: #caadff;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 10px;
 }
 
 input::placeholder {
-  color: #000000;
+  color: #b266ff;
+  font-weight: bolder;
+}
+
+.img_div {
+  width: 470px;
 }
 
 .img_div img {
-  height: 100px;
+  width: 350px;
+  display: block;
+  border-radius: 20px;
+  margin: auto;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #d1a3ff;
+  margin-top: 100px;
+  border-top: 5px solid #b266ff;
+  padding: 1rem;
+}
+
+.border {
+  background-color: #b266ff;
+  height: 2px;
+}
+
+footer > * {
+  flex-grow: 1;
+}
+
+footer ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+footer ul li a p {
+  color: rgb(255, 255, 255);
+}
+
+footer ul li a i {
+  background-color: #b45bfd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+footer ul li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer ul li a:hover {
+  background-color: #cec2ff;
+  border-radius: 10px;
+}
+
+.hero_Div ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero_Div ul li a p {
+  color: rgb(255, 255, 255);
+  gap: 3rem;
+}
+
+.pro_Div ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pro_Div ul li a p {
+  color: rgb(255, 255, 255);
+  gap: 3rem;
+}
+
+.email_Div ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.email_Div ul li a p {
+  color: rgb(255, 255, 255);
+  gap: 3rem;
 }
 
 /* mobile */
@@ -426,5 +644,9 @@ input::placeholder {
   .aboutMe h3 {
     font-size: 2.5rem;
     text-align: center;
+  }
+
+  .img_div {
+    display: none;
   }
 }
